@@ -38,58 +38,88 @@ function Portmain() {
       >
         
         {/* Dark Overlay */}
-         <Box
-          sx={{
-            position: "absolute",
-            top: 0, left: 0, right: 0, bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.6)",
-            zIndex: 0
-          }}
+        <Box
+            sx={{
+                position: "absolute",
+                top: 0, left: 0, right: 0, bottom: 0,
+                backgroundColor: "rgba(0,0,0,0.6)",
+                zIndex: 0
+            }}
         />
 
-       
+        <Box sx={{ position: "relative", zIndex: 1, px: "2px" }}>
+            <Typography
+                mt={{ xs: 4, md: 4 }}
+                variant="body1"
+                component="h4"
+                sx={{
+                    fontSize: { xs: "16px", md: "20px" },
+                    color: "#03fcd3",
+                    mb: 1,
+                    marginTop: { xs: "85px", md: "40px" }, // Ensures 30px top margin on mobile
+                }}
+            >
+                Hi, I Am
+            </Typography>
 
-        {/* Text Content */}
-         
-        <Box sx={{ position: "relative", zIndex: 1,px:"2px" }}>
+            {/* Mobile view content below "Hi, I Am" */}
+          <Box
+            sx={{
+              display: { xs: "block", md: "none" },
+              mt: 2,
+              mb: 2,
+              textAlign: "center",
+            }}
+          >
+            {/* You can customize this mobile-specific content */}
+            {/* <Typography
+              variant="subtitle1"
+              sx={{
+                color: "#03fcd3",
+                fontWeight: "bold",
+                fontSize: "18px",
+              }}
+            >
+              Welcome to my portfolio 
+            </Typography> */}
+          </Box>
 
-      
-        <Typography mt={4} 
-          variant="body1"
-          component="h4"
-          sx={{ fontSize: { xs: "16px", md: "20px"} ,lg:{fontSize:"20px"},color: "#03fcd3", mb: 1 }}
-        >
-          Hi, I Am
-        </Typography>
-      
-          <Typography mt={5}
-          variant="h3"
-          component="h4"
-          sx={{color:"whitesmoke",marginTop:{xs:"25px"},fontWeight: "bold", fontFamily: "inherit",fontSize: { xs: "28px", md: "36px",xl:"42px"},lg:{fontSize:"42px" } }}
-        >
-          BALASHANMUGAM RAJENDRAN
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h4"
-          sx={{
-            mt: 2,
-            fontFamily: "sans-serif",
-            fontWeight: "bold",
-            color: "rgba(255,255,255,0.6)",
-            fontSize: { xs: "22px", md: "28px"},
-            marginTop:{xs:"55px"}
-          }}
-        >
-          Python Full Stack Developer
-        </Typography>
+          <Typography
+            mt={5}
+            variant="h3"
+            component="h4"
+            sx={{
+              color: "whitesmoke",
+              marginTop: { xs: "25px" },
+              fontWeight: "bold",
+              fontFamily: "inherit",
+              fontSize: { xs: "28px", md: "36px", xl: "42px" },
+              lg: { fontSize: "42px" },
+            }}
+          >
+            BALASHANMUGAM RAJENDRAN
+          </Typography>
+          <Typography
+            variant="h4"
+            component="h4"
+            sx={{
+              mt: 2,
+              fontFamily: "sans-serif",
+              fontWeight: "bold",
+              color: "rgba(255,255,255,0.6)",
+              fontSize: { xs: "22px", md: "28px" },
+              marginTop: { xs: "35px" },
+            }}
+          >
+            Python Full Stack Developer
+          </Typography>
 
-        <Typography 
-          variant="body2"
-          sx={{
-            marginTop:{xs:"90px",md:"20px"},
-            maxWidth: "600px",
-            px: { xs: 1, md: 0 },                      // horizontal padding on mobile
+          <Typography
+            variant="body2"
+            sx={{
+              marginTop: { xs: "105px", md: "20px" },
+              maxWidth: "600px",
+              px: { xs: 1, md: 0 },
             color: "white",
             fontFamily: "initial",
             fontWeight:"bold",

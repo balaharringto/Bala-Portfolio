@@ -1,223 +1,224 @@
+import React, { useState } from "react";
 import { Box, Typography, TextField, Button } from "@mui/material";
-import CallIcon from '@mui/icons-material/Call';
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { useState } from "react";
+import CallIcon from "@mui/icons-material/Call";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
-function Portfmain(){
+function ContactRow({ icon, text, href }) {
+  // if href provided, render as <a> so mobile taps open phone/email/link
+  return (
+    <Box
+      component={href ? "a" : "div"}
+      href={href}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: 2,
+        width: { xs: "92%", md: "100%" },
+        margin: { xs: "10px auto", md: "8px 0" }, // center on mobile
+        justifyContent: { xs: "center", md: "flex-start" },
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
+      <Box
+        sx={{
+          width: { xs: 36, md: 44 },
+          height: { xs: 36, md: 44 },
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "rgba(255,255,255,0.04)",
+          flexShrink: 0,
+        }}
+      >
+        {React.cloneElement(icon, { sx: { fontSize: { xs: 18, md: 26 } } })}
+      </Box>
 
-   const [name, setName] = useState("");
+      <Typography
+        sx={{
+          fontSize: { xs: "14px", md: "18px" },
+          fontWeight: 700,
+          wordBreak: "break-word",
+          textAlign: { xs: "left", md: "left" }, // text sits next to icon
+        }}
+      >
+        {text}
+      </Typography>
+    </Box>
+  );
+}
+
+function Portfmain() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // ✅ do something with the data (e.g., send to backend)
     console.log("Submitted data:", { name, email, message });
-
-    // Clear inputs after submit
     setName("");
     setEmail("");
     setMessage("");
-  }
-    return(
-       <Box mt={15} color={"white"}>
-            <Typography 
-              color="white" 
-              variant="h3" 
-              component="h1" 
-              sx={{ 
-                display: "flex", 
-                justifyContent: "center", 
-                fontFamily: "serif", 
-                fontWeight: "bold" 
-              }}
-            >
-                Contact Us
-            </Typography>
-            <Box
-              mt={5}
-              sx={{
-                display: "flex",
-                justifyContent: "space-around",
-                padding: "30px",
-                flexDirection: { xs: "column", md: "row" },  // mobile view: vertical stack
-                alignItems: { xs: "center", md: "flex-start" }, // center on mobile
-                gap: { xs: 4, md: 0 }, // spacing between items on mobile
-              }}
-            >
-                <Box>
-                    <Typography 
-                      variant="h4" 
-                      ml={2} 
-                      mt={12} 
-                      sx={{ 
-                        fontFamily: "sans-serif", 
-                        fontStyle: "unset", 
-                        fontWeight: "bold", 
-                        color: "#34ebba",
-                        fontSize: { xs: "24px", md: "32px" } // optional: smaller heading on mobile
-                      }}
-                    >
-                        Contact Me
-                    </Typography> 
-                    
-                    <Button  
-                      color="white"  
-                      sx={{ 
-                        fontSize: { xs: "16px", md: "20px" },
-                        marginTop: "40px",
-                        fontWeight: "bold",
-                        textTransform: "none",
-                        display: "flex",
-                        gap: "10px",
-                      }}
-                    >
-                        <CallIcon sx={{ fontSize: { xs: "24px", md: "30px" } }}/>
-                        <Typography mt={1} sx={{ fontSize: { xs: "16px", md: "20px" }, fontWeight: "bold" }}>
-                          Mobile No : +91 8148338798
-                        </Typography> 
-                    </Button>
+  };
 
-                    <Button  
-                      color="white"  
-                      sx={{ 
-                        fontSize: { xs: "16px", md: "20px" },
-                        marginTop: "20px",
-                        fontWeight: "bold",
-                        textTransform: "none",
-                        display: "flex",
-                        gap: "10px",
-                      }}
-                    >
-                        <EmailIcon sx={{ fontSize: { xs: "24px", md: "30px" } }}/>
-                        <Typography mt={1} sx={{ fontSize: { xs: "16px", md: "20px" }, fontWeight: "bold" }}>
-                          Email : balarshanmugam492@gmail.com
-                        </Typography> 
-                    </Button>
-                     
-                    <Button  
-                      color="white"  
-                      sx={{ 
-                        fontSize: { xs: "16px", md: "20px" },
-                        marginTop: "20px",
-                        fontWeight: "bold",
-                        textTransform: "none",
-                        display: "flex",
-                        gap: "10px",
-                      }}
-                    >
-                        <LinkedInIcon sx={{ fontSize: { xs: "24px", md: "30px" } }}/>
-                        <Typography mt={1} sx={{ fontSize: { xs: "16px", md: "20px" }, fontWeight: "bold" }}>
-                          LinkedIn : BALA SHANMUGAM
-                        </Typography> 
-                    </Button>
+  return (
+    <Box mt={10} color="white" pb={8}>
+      <Typography
+        variant="h3"
+        component="h1"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontFamily: "serif",
+          fontWeight: "bold",
+          fontSize: { xs: "26px", md: "36px" },
+          mb: { xs: 3, md: 6 },
+        }}
+      >
+        Contact Us
+      </Typography>
 
-                    <Button  
-                      color="white"  
-                      sx={{ 
-                        fontSize: { xs: "16px", md: "20px" },
-                        marginTop: "20px",
-                        fontWeight: "bold",
-                        textTransform: "none",
-                        display: "flex",
-                        gap: "10px",
-                      }}
-                    >
-                        <GitHubIcon sx={{ fontSize: { xs: "24px", md: "30px" } }}/>
-                        <Typography mt={1} sx={{ fontSize: { xs: "16px", md: "20px" }, fontWeight: "bold" }}>
-                          GitHub : BALA SHANMUGAM
-                        </Typography> 
-                    </Button>
-                </Box>
-        
-                <Box
-                  sx={{
-                    maxWidth: "500px",
-                    mt: 8,
-                    p: 4,
-                    background: "linear-gradient(135deg, #1a1a1a, #2e2e2e)",
-                    borderRadius: 4,
-                    color: "white",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      mb: 3,
-                      textAlign: "center",
-                      color: "#34ebba",
-                      fontWeight: "bold",
-                      fontSize: { xs: "24px", md: "32px" } // optional: smaller heading on mobile
-                    }}
-                  >
-                    Any Message For Me 
-                  </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "flex-start",
+          justifyContent: "space-around",
+          gap: { xs: 6, md: 0 },
+          px: { xs: 2, md: 6 },
+        }}
+      >
+        {/* left: contact list */}
+        <Box
+          sx={{
+            width: { xs: "100%", md: "40%" },
+            textAlign: { xs: "center", md: "left" },
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+              color: "#34ebba",
+              fontSize: { xs: "20px", md: "32px" },
+              mb: { xs: 2, md: 4 },
+            }}
+          >
+            Contact Me
+          </Typography>
 
-                  <Box component="form" noValidate autoComplete="off"   onSubmit={handleSubmit} >
-                    <TextField
-                      fullWidth
-                      label="Name"
-                      variant="outlined"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      sx={{
-                        mb: 2,
-                        backgroundColor: "white",
-                        borderRadius: 1,
-                      }}
-                    />
-                    <TextField
-                      fullWidth
-                      label="Email"
-                      type="email"
-                      variant="outlined"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      
-                      sx={{
-                        mb: 2,
-                        backgroundColor: "white",
-                        borderRadius: 1,
-                      }}
-                    />
-                    <TextField
-                      fullWidth
-                      label="Message"
-                      multiline
-                      rows={4}
-                      variant="outlined"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      
-                      sx={{
-                        mb: 3,
-                        backgroundColor: "white",
-                        borderRadius: 1,
-                      }}
-                    />
-                    <Button
-                      variant="contained"
-                      fullWidth
-                      sx={{
-                        backgroundColor: "#34ebba",
-                        color: "black",
-                        fontWeight: "bold",
-                        "&:hover": {
-                          backgroundColor: "#2ad0a0",
-                        },
-                      }}
-                     onSubmit={handleSubmit} >
-                      Send Message
-                    </Button>
-                  </Box>
-                </Box>
-            </Box>
+          <ContactRow
+            icon={<CallIcon />}
+            text="Mobile No : +91 8148338798"
+            href="tel:+918148338798"
+          />
+
+          <ContactRow
+            icon={<EmailIcon />}
+            text="Email : balarshanmugam492@gmail.com"
+            href="mailto:balarshanmugam492@gmail.com"
+          />
+
+          <ContactRow
+            icon={<LinkedInIcon />}
+            text="LinkedIn : BALASHANMUGAM RAJERDRAN"
+            href="https://www.linkedin.com" // replace with your profile URL
+          />
+
+          <ContactRow
+            icon={<GitHubIcon />}
+            text="GitHub : BALASHANMUGAM"
+            href="https://github.com/balaharringto" // replace with your profile URL
+          />
         </Box>
-    )
+
+        {/* right: contact form */}
+        <Box
+          sx={{
+            width: { xs: "92%", md: "50%" },
+            mt: { xs: 0, md: 4 },
+            p: { xs: 3, md: 4 },
+            background: "linear-gradient(135deg, #1a1a1a, #2e2e2e)",
+            borderRadius: 3,
+            mx: { xs: "auto", md: 0 },
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              mb: 3,
+              textAlign: "center",
+              color: "#34ebba",
+              fontWeight: "bold",
+              fontSize: { xs: "20px", md: "28px" },
+            }}
+          >
+            Any Message For Me
+          </Typography>
+
+          <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Name"
+              variant="outlined"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              sx={{
+                mb: 2,
+                backgroundColor: "white",
+                borderRadius: 1,
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              type="email"
+              variant="outlined"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{
+                mb: 2,
+                backgroundColor: "white",
+                borderRadius: 1,
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Message"
+              multiline
+              rows={4}
+              variant="outlined"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              sx={{
+                mb: 3,
+                backgroundColor: "white",
+                borderRadius: 1,
+              }}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              sx={{
+                backgroundColor: "#34ebba",
+                color: "black",
+                fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "#2ad0a0",
+                },
+              }}
+            >
+              Send Message
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
 }
 
 export default Portfmain;

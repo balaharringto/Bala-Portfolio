@@ -1,122 +1,238 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  AppBar,
-  Toolbar,
-  Typography,
   Box,
-  Button,
-  IconButton,
-  Drawer,
+  Typography,
   List,
   ListItem,
+  ListItemAvatar,
+  Avatar,
   ListItemText,
-  Avatar
+  Button,
+  Grid,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-import myphoto from "../images/iron.jpg";
-import resume from "../assests/balaresume.pdf"
+import Porttmain from "./Porttmain";
 
-function Portnavbar() {
-  const [open, setOpen] = useState(false);
-
-  const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
-  };
-
-  function handleDownload() {
-    const link = document.createElement('a');
-    link.href = resume;
-    link.download = 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
+function Portsmain() {
   return (
-    <>
-      <AppBar position="sticky" sx={{ backgroundColor: "transparent", padding: "10px" }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          {/* Brand */}
-          <Typography variant="h6" component="h3">
-            BALASHANMUGAM
-          </Typography>
+    <Box sx={{ marginTop: { xs: "110px", md: "30px" }, px: 3 }}>
+      <Typography
+        variant="h4"
+        component="h1"
+        color="#03fcd3"
+        sx={{
+          textAlign: "center",
+          fontWeight: "bold",
+          fontFamily: "serif",
+          mt: { xs: 5, md: 3 },
+        }}
+      >
+        Experience
+      </Typography>
 
-          {/* Desktop menu */}
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              alignItems: "center",
-              gap: "30px",
-              fontSize: "12px"
-            }}
-          >
-            <Link to="/Bala-Portfolio/" style={{ color: "inherit", textDecoration: "none" }}>
-              <Typography variant="body2">Home</Typography>
-            </Link>
-            <Link to="/experience" style={{ color: "inherit", textDecoration: "none" }}>
-              <Typography variant="body2">Experience</Typography>
-            </Link>
-            <Link to="/skils" style={{ color: "inherit", textDecoration: "none" }}>
-              <Typography variant="body2">Project</Typography>
-            </Link>
-            <Link to="/contact" style={{ color: "inherit", textDecoration: "none" }}>
-              <Typography variant="body2">Contact</Typography>
-            </Link>
+      <Grid container spacing={4} justifyContent="center" mt={4}>
+        {/* Frontend */}
+        <Grid item xs={12} sm={6} md={4}>
+          <CardComponent
+            title="Frontend Projects"
+            desc="Frontend projects involve building the user-facing part of websites and applications focusing on visual elements and user interaction."
+            image="https://t3.ftcdn.net/jpg/02/92/88/72/360_F_292887204_2wH041phSQo70eqaE9GRqFvn5MmQ4B8w.jpg"
+            projectLink="https://github.com/balaharringto/Bala-Portfolio"
+          />
+        </Grid>
 
-            <Button sx={{ minWidth: "auto", color: "#a7f2e6", borderColor: "#03fcd3" }} variant="outlined">
-              Resume
-            </Button>
+        {/* Backend */}
+        <Grid item xs={12} sm={6} md={4}>
+          <CardComponent
+            title="Backend Projects"
+            desc="Backend projects involve server-side development, focusing on databases, APIs, authentication, and overall application logic."
+            image="https://t4.ftcdn.net/jpg/02/99/62/11/360_F_299621124_vutDKbNwRJG6poJRQQIMYfsc4tJCTO5E.jpg"
+            projectLink="https://github.com/balaharringto/Bala-Portfolio"
+          />
+        </Grid>
 
-            {/* ✅ Avatar only for large screens */}
-            <Avatar alt="I AM BALA" src={myphoto} sx={{ width: 40, height: 40 }} />
-          </Box>
+        {/* Fullstack */}
+        <Grid item xs={12} sm={6} md={4}>
+          <CardComponent
+            title="Fullstack Projects"
+            desc="Fullstack projects involve developing both the front-end and back-end of web applications & websites."
+            image="https://wallpapercave.com/wp/wp10167056.jpg"
+            projectLink="https://github.com/balaharringto/Bala-Portfolio"
+          />
+        </Grid>
 
-          {/* Mobile view: Resume + MenuIcon */}
-          <Box sx={{ display: { xs: "flex", md: "none",backgroundColor:"rgba(0, 0, 0, 0.95)" }, alignItems: "center", gap: "10px" }}>
-            <Button   onClick={handleDownload} sx={{ minWidth: "auto", color: "#a7f2e6", borderColor: "#03fcd3" }} variant="outlined">
-              Resume
-            </Button>
-            <IconButton sx={{ color: "white",backgroundColor:"rgba(0, 0, 0, 0.95)" }} onClick={toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
+        {/* Internship Certificate 1 */}
+        <Grid item xs={12} sm={6} md={4}>
+          <CertificateComponent
+            title="Internship Certificate 1"
+            desc="Build with React & MUI using modern web development tools to design clean, responsive UIs."
+            image="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/mtes4cvipnhgaaoshrti"
+            pdfPath="/assets/astrinosh.pdf"
+          />
+        </Grid>
 
-      {/* Drawer for mobile */}
-      <Drawer anchor="right" open={open} onClose={toggleDrawer(false)} sx={{color:"#03fcd3"}} >
-        <Box sx={{ width: 250,height:"100%",color:"white",backgroundColor:"rgba(0, 0, 0, 0.95)" }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
-          <List sx={{color:"#03fcd3"}}>
-            <ListItem button sx={{color:"#03fcd3",'&:hover': {
-      color: "white",      
-      backgroundColor: "transparent"  
-    }}} component={Link} to="/Bala-Portfolio/">
-              <ListItemText primary="Home" />
-            </ListItem>
-            <ListItem button  sx={{color:"#03fcd3",'&:hover': {
-      color: "white",      
-      backgroundColor: "transparent"  
-    }}} component={Link} to="/experience">
-              <ListItemText primary="Experience" />
-            </ListItem>
-            <ListItem button  sx={{color:"#03fcd3",'&:hover': {
-      color: "white",      
-      backgroundColor: "transparent"  
-    }}} component={Link} to="/skils">
-              <ListItemText primary="Project" />
-            </ListItem>
-            <ListItem button   sx={{color:"#03fcd3",'&:hover': {
-      color: "white",      
-      backgroundColor: "transparent"  
-    }}} component={Link} to="/contact">
-              <ListItemText primary="Contact" />
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
-    </>
+        {/* Internship Certificate 2 */}
+        <Grid item xs={12} sm={6} md={4}>
+          <CertificateComponent
+            title="Internship Certificate 2"
+            desc="Build with React & MUI using modern web development tools."
+            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgUfurBf95tlRbBxj3y4oHNxVoyn-FDN3zNA&s"
+            pdfPath="/assets/vdart.pdf"
+          />
+        </Grid>
+
+        {/* Seminar 1 */}
+        <Grid item xs={12} sm={6} md={4}>
+          <SeminarComponent
+            title="Seminar on Cloud Computing"
+            desc="Attended a seminar on Cloud Computing technologies and deployment strategies."
+            image="https://cdn-icons-png.flaticon.com/512/4144/4144781.png"
+          />
+        </Grid>
+
+        {/* Seminar 2 */}
+        <Grid item xs={12} sm={6} md={4}>
+          <SeminarComponent
+            title="Seminar on AI & ML"
+            desc="Participated in an AI/ML seminar exploring machine learning applications in real-world scenarios."
+            image="https://cdn-icons-png.flaticon.com/512/4712/4712107.png"
+          />
+        </Grid>
+      </Grid>
+
+      <Porttmain />
+    </Box>
   );
 }
 
-export default Portnavbar;
+// --------------------- Card Component ---------------------
+function CardComponent({ title, desc, image, projectLink }) {
+  return (
+    <Box
+      sx={{
+        background: "rgba(0, 0, 0, 0.85)",
+        borderRadius: 4,
+        boxShadow: 5,
+        p: 3,
+        color: "white",
+        transition: "background 0.3s",
+        "&:hover": { background: "rgba(0, 0, 0, 0.95)" },
+      }}
+    >
+      <List>
+        <ListItem alignItems="flex-start">
+          <ListItemAvatar>
+            <Avatar alt={title} src={image} />
+          </ListItemAvatar>
+          <ListItemText
+            primary={<Typography variant="h6" sx={{ fontWeight: "bold" }}>{title}</Typography> }
+            secondary={<Typography variant="body2" sx={{ mt: 1 }}>{desc}</Typography>}
+          />
+        </ListItem>
+        <Box mt={2} display="flex" justifyContent="space-between">
+          <Button
+            variant="outlined"
+            href={projectLink}
+            target="_blank"
+            sx={{ color: "#34ebba", borderColor: "#34abeb" }}
+          >
+            Projects
+          </Button>
+          <Button
+            variant="outlined"
+            href={projectLink}
+            target="_blank"
+            sx={{ color: "#34ebba", borderColor: "#34abeb" }}
+          >
+            Codes
+          </Button>
+        </Box>
+      </List>
+    </Box>
+  );
+}
+
+// --------------------- Certificate Component ---------------------
+function CertificateComponent({ title, desc, image, pdfPath }) {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = `${title.replace(/\s+/g, "_")}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <Box
+      sx={{
+        background: "rgba(0, 0, 0, 0.85)",
+        borderRadius: 4,
+        boxShadow: 5,
+        p: 3,
+        color: "white",
+        transition: "background 0.3s",
+        "&:hover": { background: "rgba(0, 0, 0, 0.95)" },
+      }}
+    >
+      <List>
+        <ListItem alignItems="flex-start">
+          <ListItemAvatar>
+            <Avatar alt={title} src={image} />
+          </ListItemAvatar>
+          <ListItemText
+            primary={<Typography variant="h6" sx={{ fontWeight: "bold" }}>{title}</Typography>}
+            secondary={<Typography variant="body2" sx={{ mt: 1 }}>{desc}</Typography>}
+          />
+        </ListItem>
+        <Box mt={2} display="flex" justifyContent="space-between">
+          <Button
+            variant="outlined"
+            sx={{ color: "#34ebba", borderColor: "#34abeb" }}
+            onClick={handleDownload}
+          >
+            Download
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{ color: "#34ebba", borderColor: "#34abeb" }}
+            href={pdfPath}
+            target="_blank"
+          >
+            View
+          </Button>
+        </Box>
+      </List>
+    </Box>
+  );
+}
+
+// --------------------- Seminar Component ---------------------
+function SeminarComponent({ title, desc, image }) {
+  return (
+    <Box
+      sx={{
+        background: "rgba(0, 0, 0, 0.85)",
+        borderRadius: 4,
+        boxShadow: 5,
+        p: 3,
+        color: "white",
+        transition: "background 0.3s",
+        "&:hover": { background: "rgba(0, 0, 0, 0.95)" },
+      }}
+    >
+      <List>
+        <ListItem alignItems="flex-start">
+          <ListItemAvatar>
+            <Avatar alt={title} src={image} />
+          </ListItemAvatar>
+          <ListItemText
+            primary={<Typography variant="h6" sx={{ fontWeight: "bold" }}>{title}</Typography>}
+            secondary={<Typography variant="body2" sx={{ mt: 1 }}>{desc}</Typography>}
+          />
+        </ListItem>
+      </List>
+    </Box>
+  );
+}
+
+export default Portsmain;

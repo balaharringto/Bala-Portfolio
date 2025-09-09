@@ -9,10 +9,11 @@ import img7 from "../images/dj.png";
 import img8 from "../images/rest.png";
 import img9 from "../images/mysql.png";
 import img10 from "../images/mui.png";
+import img11 from "../images/mongos.png"
 import Portfmain from "./Portfmain";
 
 function Porttmain() {
-  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,img11];
 
   return (
     <Box
