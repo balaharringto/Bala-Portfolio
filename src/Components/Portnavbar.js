@@ -51,7 +51,7 @@ function Portnavbar() {
               fontSize: "12px"
             }}
           >
-            <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <Link to="/Bala-Portfolio/" style={{ color: "inherit", textDecoration: "none" }}>
               <Typography variant="body2">Home</Typography>
             </Link>
             <Link to="/experience" style={{ color: "inherit", textDecoration: "none" }}>
@@ -91,7 +91,7 @@ function Portnavbar() {
             <ListItem button sx={{color:"#03fcd3",'&:hover': {
       color: "white",      
       backgroundColor: "transparent"  
-    }}} component={Link} to="/">
+    }}} component={Link} to="/Bala-Portfolio/">
               <ListItemText primary="Home" />
             </ListItem>
             <ListItem button  sx={{color:"#03fcd3",'&:hover': {

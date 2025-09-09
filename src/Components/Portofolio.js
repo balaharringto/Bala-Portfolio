@@ -23,7 +23,7 @@ function Portofolio(){
     
                 <Portnavbar/>
             <Routes>
-            <Route path="/" element={<Portmain/>}/>
+            <Route path="/Bala-Portfolio/" element={<Portmain/>}/>
             <Route path="/experience" element={<Portsmain/>}/>
             <Route path="/skils" element={<Porttmain/>}/>
             <Route path="/contact" element={<Portfmain/>}/>
