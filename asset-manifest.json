@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Bala-Portfolio/static/css/main.31d6cfe0.css",
+    "main.js": "/Bala-Portfolio/static/js/main.733d402a.js",
+    "static/js/453.70c39971.chunk.js": "/Bala-Portfolio/static/js/453.70c39971.chunk.js",
+    "static/media/black.jpg": "/Bala-Portfolio/static/media/black.ca57dcd5448b2ab718ca.jpg",
+    "static/media/balaresume.pdf": "/Bala-Portfolio/static/media/balaresume.fc23148f87b13e92dd98.pdf",
+    "static/media/bala4.jpeg": "/Bala-Portfolio/static/media/bala4.852e72652223dd5cef72.jpeg",
+    "static/media/mui.png": "/Bala-Portfolio/static/media/mui.7aa7895ec98286eb1f31.png",
+    "static/media/python.png": "/Bala-Portfolio/static/media/python.517809672b3e0bc81a16.png",
+    "static/media/html.png": "/Bala-Portfolio/static/media/html.34cf776fd568e058c837.png",
+    "static/media/tailwind.png": "/Bala-Portfolio/static/media/tailwind.3c71ebf34c7c16ff019a.png",
+    "static/media/dj.png": "/Bala-Portfolio/static/media/dj.220531328802a9e5ce05.png",
+    "static/media/mysql.png": "/Bala-Portfolio/static/media/mysql.eba9b71ba70470488cb6.png",
+    "static/media/rest.png": "/Bala-Portfolio/static/media/rest.4380b2743f5dc90e9754.png",
+    "static/media/react1.png": "/Bala-Portfolio/static/media/react1.76846acb12c5d885ea07.png",
+    "static/media/js.png": "/Bala-Portfolio/static/media/js.c1305c5401e3b7ee7c1a.png",
+    "static/media/css.png": "/Bala-Portfolio/static/media/css.22a57f43cf897ea6904e.png",
+    "index.html": "/Bala-Portfolio/index.html",
+    "main.733d402a.js.map": "/Bala-Portfolio/static/js/main.733d402a.js.map",
+    "453.70c39971.chunk.js.map": "/Bala-Portfolio/static/js/453.70c39971.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.733d402a.js"
+  ]
+}
