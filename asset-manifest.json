@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/Bala-Portfolio/static/css/main.31d6cfe0.css",
-    "main.js": "/Bala-Portfolio/static/js/main.748a5597.js",
+    "main.js": "/Bala-Portfolio/static/js/main.6c074d45.js",
     "static/js/453.70c39971.chunk.js": "/Bala-Portfolio/static/js/453.70c39971.chunk.js",
     "static/media/black.jpg": "/Bala-Portfolio/static/media/black.ca57dcd5448b2ab718ca.jpg",
+    "static/media/balaresume.pdf": "/Bala-Portfolio/static/media/balaresume.fc23148f87b13e92dd98.pdf",
     "static/media/mongos.png": "/Bala-Portfolio/static/media/mongos.a8e2da08f19326f3f3be.png",
     "static/media/bala4.jpeg": "/Bala-Portfolio/static/media/bala4.852e72652223dd5cef72.jpeg",
     "static/media/mui.png": "/Bala-Portfolio/static/media/mui.7aa7895ec98286eb1f31.png",
@@ -17,11 +18,11 @@
     "static/media/js.png": "/Bala-Portfolio/static/media/js.c1305c5401e3b7ee7c1a.png",
     "static/media/css.png": "/Bala-Portfolio/static/media/css.22a57f43cf897ea6904e.png",
     "index.html": "/Bala-Portfolio/index.html",
-    "main.748a5597.js.map": "/Bala-Portfolio/static/js/main.748a5597.js.map",
+    "main.6c074d45.js.map": "/Bala-Portfolio/static/js/main.6c074d45.js.map",
     "453.70c39971.chunk.js.map": "/Bala-Portfolio/static/js/453.70c39971.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.748a5597.js"
+    "static/js/main.6c074d45.js"
   ]
 }
